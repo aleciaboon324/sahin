@@ -1,0 +1,40 @@
+# Binary
+sahin
+sahin.exe
+
+# Go
+*.test
+*.out
+vendor/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Node
+node_modules/
+npm-debug.log
+
+# Çıktılar & workspace
+loot/
+results/
+*.pdf
+*.docx
+*-data.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config (API anahtarları içerebilir)
+config.yaml
+!config.example.yaml
