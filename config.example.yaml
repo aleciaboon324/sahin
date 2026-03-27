@@ -1,0 +1,95 @@
+# Şahin Konfigürasyon Dosyası
+# Konum: ~/.sahin/config.yaml
+# Sn1per'ın conf/default dosyasından ilham alınmış, YAML-native ve tip-güvenli
+
+install_dir: ~/.sahin
+workspace_dir: ~/.sahin/workspaces
+log_level: info  # debug | info | warn | error
+
+scan:
+  # Port Profilleri — sahin scan --ports quick|default|web|full ile seç
+  quick_ports: "21,22,23,25,53,80,110,135,137-139,143,443,445,3306,3389,8080,8443"
+  web_ports: "80,443,591,3000,8000,8008,8080-8091,8443,8888,9000,9080,9200,9443,10000"
+
+  # Nmap seçenekleri (Sn1per'ın NMAP_OPTIONS'ından türetildi)
+  nmap_options_normal: "-sV -Pn -O --osscan-guess --max-os-tries 1 -n -PE -v --max-retries 3 --min-rate 450 --max-rate 15000"
+  nmap_options_stealth: "-sS -Pn -T2 -n --max-retries 1 --min-rate 100 --max-rate 500"
+  nmap_options_fast: "-sV -Pn -T4 -n --min-rate 1000 --max-rate 5000"
+
+  # Web brute force uzantıları (Sn1per WEB_BRUTE_EXTENSIONS'dan)
+  web_brute_extensions: "htm,html,asp,aspx,php,jsp,action,bak,cfg,sql,txt,zip,xml,yml,js,json"
+
+  max_threads: 10
+  max_hosts: 2000
+  timeout: 60m
+  screenshot: true
+  javascript_analysis: true
+
+  # Kapsam dışı hedefler (Sn1per OUT_OF_SCOPE'tan)
+  out_of_scope: []
+
+# API Anahtarları — boş bırakılırsa ilgili modül atlanır
+apis:
+  shodan: ""
+  censys_id: ""
+  censys_secret: ""
+  hunterio: ""
+  github: ""
+  virustotal: ""
+
+# Opsiyonel entegrasyonlar
+integrations:
+  openvas:
+    enabled: false
+    host: "127.0.0.1"
+    port: 9390
+    username: "admin"
+    password: ""
+
+  nessus:
+    enabled: false
+    host: "127.0.0.1:8834"
+    username: "admin"
+    password: ""
+
+  burp:
+    enabled: false
+    host: "127.0.0.1"
+    port: 1337
+
+  metasploit:
+    import: false
+    lhost: "127.0.0.1"
+    lport: 4444
+
+# Bildirimler — Sn1per'ın SLACK_NOTIFICATIONS_* değişkenlerinin karşılığı
+notify:
+  slack:
+    enabled: false
+    token: ""      # Slack Incoming Webhook token
+    channel: "#pentest"
+
+  webhook:
+    enabled: false
+    url: ""        # Discord/Teams/generic webhook URL
+
+  events:
+    scan_start: true
+    scan_finish: true
+    new_domain: true
+    port_change: true
+    takeover: true    # subdomain takeover her zaman bildirilir
+    new_finding: true
+    critical_only: false  # true ise sadece critical/high gönderilir
+
+# Türkiye'ye özel modül ayarları
+tr:
+  btk_enabled: true
+  gov_tr_enum: true
+  shodan_tr_asns: true
+  trcert_feed: true
+  usom_check: true
+  tr_takeover_patterns:
+    - "superonline.net"
+    - "turktelekom.com.tr"
+    - "turkcell.com.tr"

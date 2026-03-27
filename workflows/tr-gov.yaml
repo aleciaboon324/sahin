@@ -1,0 +1,38 @@
+kind: workflow
+name: tr-gov
+description: >
+  Türk kamu kurumlarına (.gov.tr, .edu.tr, .bel.tr) özel tarama workflow'u.
+  Stealth modda çalışır, WAF/IDS tetiklemez.
+author: sahin-security
+version: "1.0"
+tags: [turkey, government, stealth]
+
+params:
+  - name: stealth
+    default: "true"
+    help: Stealth mod (yavaş tarama)
+
+modules:
+
+  - name: recon
+    params:
+      dns_brute: "true"
+      zone_transfer: "true"
+      cert_transparency: "true"
+
+  - name: tr
+    depends_on: [recon]
+    params:
+      btk: "true"
+      gov_enum: "true"
+      shodan_tr: "true"
+      trcert_feed: "true"
+      usom_check: "true"
+
+  - name: web
+    depends_on: [tr, recon]
+    params:
+      screenshot: "true"
+      dir_bruteforce: "false"   # stealth: brute force yok
+      tech_detect: "true"
+      headers: "true"
